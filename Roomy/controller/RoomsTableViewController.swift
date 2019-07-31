@@ -8,102 +8,90 @@
 //
 
 import UIKit
+import RealmSwift
+import Kingfisher
 
 class RoomsTableViewController: UITableViewController {
-
+   
     @IBAction func signOutButton(_ sender: UIButton) {
-//        dismiss(animated: true, completion: nil)
         
         let storyBoard = UIStoryboard(name: "Main", bundle:nil)  
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "logIn")
         self.present(nextViewController, animated:true, completion:nil)
         
         UserDefaults.standard.removeObject(forKey: "auth_token")
-        
-        
-    }
-    
+//
+//        let realm = try! Realm()
+//
+//        try! realm.write {
+//            realm.deleteAll()
+//        }
+//
+    }     
     @IBOutlet weak var headerView: UIView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-      
+        
+       getRoomsFromRealm()
+        
     }
-
+    
+   var rooms = [RoomsRealm]()
    
+    
+    
+ 
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+       
+        tableView.sectionHeaderHeight = 60
         return headerView
     }
     
-    
-    
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+      
+        return rooms.count
     }
 
-    /*
+ 
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+      
+        let cell = tableView.dequeueReusableCell(withIdentifier: "roomyCell", for: indexPath) as! RoomyCell
 
-        // Configure the cell...
+        tableView.rowHeight = 150
 
-        return cell
+        cell.roomPrice.text = rooms[indexPath.row].price
+        cell.roomPlace.text = rooms[indexPath.row].place
+        cell.roomTitle.text = rooms[indexPath.row].title
+//        cell.firstImage.kf.setImage(  with: URL(string: rooms[indexPath.row].image),
+//                                      placeholder: UIImage(named: "Logo"),
+//                                      options: [
+//                                        .scaleFactor(UIScreen.main.scale),
+//                                        .transition(.fade(1)),
+//                                        .cacheOriginalImage
+//           ])
+ 
+                return cell
     }
-    */
+  
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+  
+    
+    func getRoomsFromRealm () {
+        
+        
+        let realm = try! Realm()
+        
+        try! realm.write {
+            
+            rooms = Array(realm.objects(RoomsRealm.self))
+            
+        }
+        
+        tableView.reloadData()
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
+    
 }

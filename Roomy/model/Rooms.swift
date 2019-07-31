@@ -7,16 +7,25 @@
 //
 
 import UIKit
-import
+import ObjectMapper
 
-struct Rooms {
-   
+class Rooms: Mappable{
+    var title = ""
+    var price = 0
+    var place = ""
+    var image = ""
+    var roomDescription = ""
     
+    required init?(map: Map) {
+    }
     
-    var title = [String]()
-    var price = [Int]()
-    var place = [String]()
-    var image = [String]()
-    var description = [String]()
+func mapping(map: Map) {
+        title    <- map["title"]
+        price    <- map["price"]
+        place    <- map["place"]
+        image    <- map["image"]
+        roomDescription    <- map["roomDescription"]
+    }
     
 }
+

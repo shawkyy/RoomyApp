@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4524E01A22E8C1660056F82E /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4524E01922E8C1660056F82E /* Alerts.swift */; };
+		4528C6B022EB640D00C0312F /* RoomsRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528C6AF22EB640D00C0312F /* RoomsRealm.swift */; };
+		452A3E4222F081E100F699EA /* RoomsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452A3E4122F081E100F699EA /* RoomsRouter.swift */; };
+		452A3E4422F0BC3900F699EA /* GetRooms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452A3E4322F0BC3900F699EA /* GetRooms.swift */; };
 		458514EF22E7173C002C97E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458514EE22E7173C002C97E2 /* AppDelegate.swift */; };
 		458514F422E7173C002C97E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 458514F222E7173C002C97E2 /* Main.storyboard */; };
 		458514F622E71740002C97E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 458514F522E71740002C97E2 /* Assets.xcassets */; };
@@ -18,13 +21,14 @@
 		4585150D22E71AFE002C97E2 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4585150C22E71AFE002C97E2 /* StartViewController.swift */; };
 		4585150F22E71B0B002C97E2 /* RoomsDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4585150E22E71B0B002C97E2 /* RoomsDescriptionViewController.swift */; };
 		4585151122E71B1F002C97E2 /* RoomsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4585151022E71B1F002C97E2 /* RoomsTableViewController.swift */; };
-		4585151322E71B44002C97E2 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4585151222E71B44002C97E2 /* Networking.swift */; };
-		4585151522E71B65002C97E2 /* Rooms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4585151422E71B65002C97E2 /* Rooms.swift */; };
 		A6F8CF4176607B52CBCB642A /* Pods_Roomy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC2B4BA8E6E575F61F1E95A /* Pods_Roomy.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4524E01922E8C1660056F82E /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		4528C6AF22EB640D00C0312F /* RoomsRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsRealm.swift; sourceTree = "<group>"; };
+		452A3E4122F081E100F699EA /* RoomsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsRouter.swift; sourceTree = "<group>"; };
+		452A3E4322F0BC3900F699EA /* GetRooms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRooms.swift; sourceTree = "<group>"; };
 		458514EB22E7173C002C97E2 /* Roomy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roomy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		458514EE22E7173C002C97E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		458514F322E7173C002C97E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -37,8 +41,6 @@
 		4585150C22E71AFE002C97E2 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		4585150E22E71B0B002C97E2 /* RoomsDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsDescriptionViewController.swift; sourceTree = "<group>"; };
 		4585151022E71B1F002C97E2 /* RoomsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsTableViewController.swift; sourceTree = "<group>"; };
-		4585151222E71B44002C97E2 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
-		4585151422E71B65002C97E2 /* Rooms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rooms.swift; sourceTree = "<group>"; };
 		86F9309794CFA3D95D3858FD /* Pods-Roomy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Roomy.debug.xcconfig"; path = "Target Support Files/Pods-Roomy/Pods-Roomy.debug.xcconfig"; sourceTree = "<group>"; };
 		BFC2B4BA8E6E575F61F1E95A /* Pods_Roomy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Roomy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3E5E839B10BA0DFC64A9B1C /* Pods-Roomy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Roomy.release.xcconfig"; path = "Target Support Files/Pods-Roomy/Pods-Roomy.release.xcconfig"; sourceTree = "<group>"; };
@@ -111,7 +113,7 @@
 		4585150222E7195E002C97E2 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				4585151422E71B65002C97E2 /* Rooms.swift */,
+				4528C6AF22EB640D00C0312F /* RoomsRealm.swift */,
 				4524E01922E8C1660056F82E /* Alerts.swift */,
 			);
 			path = model;
@@ -137,7 +139,8 @@
 		4585150522E719E4002C97E2 /* services */ = {
 			isa = PBXGroup;
 			children = (
-				4585151222E71B44002C97E2 /* Networking.swift */,
+				452A3E4122F081E100F699EA /* RoomsRouter.swift */,
+				452A3E4322F0BC3900F699EA /* GetRooms.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -286,13 +289,14 @@
 			files = (
 				4585151122E71B1F002C97E2 /* RoomsTableViewController.swift in Sources */,
 				4585150922E71AE4002C97E2 /* SignInViewController.swift in Sources */,
-				4585151322E71B44002C97E2 /* Networking.swift in Sources */,
-				4585151522E71B65002C97E2 /* Rooms.swift in Sources */,
 				458514EF22E7173C002C97E2 /* AppDelegate.swift in Sources */,
+				452A3E4222F081E100F699EA /* RoomsRouter.swift in Sources */,
 				4585150722E71ABE002C97E2 /* RoomyCell.swift in Sources */,
 				4524E01A22E8C1660056F82E /* Alerts.swift in Sources */,
 				4585150B22E71AF2002C97E2 /* SignUpViewController.swift in Sources */,
 				4585150D22E71AFE002C97E2 /* StartViewController.swift in Sources */,
+				452A3E4422F0BC3900F699EA /* GetRooms.swift in Sources */,
+				4528C6B022EB640D00C0312F /* RoomsRealm.swift in Sources */,
 				4585150F22E71B0B002C97E2 /* RoomsDescriptionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

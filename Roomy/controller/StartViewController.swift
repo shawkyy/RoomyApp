@@ -11,21 +11,9 @@ import UIKit
 class StartViewController: UIViewController {
 
     
-    
-    let dev = UserDefaults.standard
-    
-    
-    
-    @IBAction func emailTextField(_ sender: Any) {
-    }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        
- 
         
         if (UserDefaults.standard.object(forKey: "auth_token") != nil) {
             

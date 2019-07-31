@@ -7,18 +7,22 @@
 //
 
 import UIKit
+import RealmSwift
 
 class RoomyCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+ 
+    @IBOutlet weak var roomTitle: UILabel!
+    
+    @IBOutlet weak var roomPrice: UILabel!
+    
+    @IBOutlet weak var roomPlace: UILabel!
+    
+    @IBOutlet weak var firstImage: UIImageView!
+    
+    @IBOutlet weak var secondImage: UIImageView!
+    
+    @IBOutlet weak var thirdImage: UIImageView!
+    
+ 
 }

@@ -4,64 +4,62 @@
 //
 //  Created by shawky on 7/23/19.
 //  Copyright © 2019 shawky. All rights reserved.
-//
+
 
 import UIKit
 import NVActivityIndicatorView
+import Alamofire
+
 class SignUpViewController: UIViewController,NVActivityIndicatorViewable {
 
     
     @IBAction func backButton(_ sender: UIButton) {
-        let storyBoard = UIStoryboard(name: "Main", bundle:nil)  // l main d ll “Main.storyBoard"
+        let storyBoard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "logIn")
         self.present(nextViewController, animated:true, completion:nil)
         
     }
     
     
-    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet private weak var nameTextField: UITextField!
     
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
     
-    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet private weak var emailTextField: UITextField!
     
-    @IBAction func signUpButton(_ sender: UIButton) {
+    @IBAction private func signUpButton(_ sender: UIButton) {
         
         guard let name = emailTextField.text, !name.isEmpty else {return}
         
         guard let passwrod = passwordTextField.text, !passwrod.isEmpty else {return}
-        
         
         guard let email = passwordTextField.text, !email.isEmpty else {return}
      
         
         startAnimating()
         
-        Networking.signUp(name: nameTextField.text!, email: emailTextField.text!, Password: passwordTextField.text!) { error,success in
-          
-            if success {
+        AF.request(RoomsRouter.signUp(["name": nameTextField.text!, "email": emailTextField.text!, "Password": passwordTextField.text!]))
+        .validate()
+        .response { (response) in
              
-              self.stopAnimating()
-            
-                self.performSegue(withIdentifier: "SignUpToRooms", sender: Any?.self)
-                
-            }
-            else {
-                
-                print ("errorrrrrr")
-            }
-            
-            
-        }
-        
-        
+                switch response.result {
+                    
+                case .success:
+                     self.performSegue(withIdentifier: "SignUpToRooms", sender: Any?.self)
+               
+                     self.stopAnimating()
+
+                case .failure:
+                    break
+                    
+                }
+           }
         
     }
     
     
   
-    
- 
+
     
     
     

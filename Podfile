@@ -14,5 +14,11 @@ pod 'ObjectMapper', '~> 3.4'
 pod 'FBSDKLoginKit'
 pod 'Kingfisher'
 pod 'SwiftyJSON', '~> 4.0'
+pod 'RealmSwift'
+pod 'AlamofireObjectMapper'
+
 pod 'NVActivityIndicatorView'
+
+
+
 end

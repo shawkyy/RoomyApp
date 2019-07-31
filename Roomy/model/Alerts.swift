@@ -12,7 +12,7 @@ import UIKit
 class Alerts:UIViewController {
     
     
-  func signInAlert (fromController controller: UIViewController) {
+  class func signInAlert (fromController controller: UIViewController) {
         
         
         let alert = UIAlertController(title: "", message: "incorrect email or password", preferredStyle: UIAlertController.Style.alert)
