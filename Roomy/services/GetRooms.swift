@@ -6,7 +6,7 @@ import Foundation
 import RealmSwift
 
 class GetRooms {
-    class func getRoomsFromBackEnd (){
+    class func getRoomsFromBackEnd(completionHandler: @escaping () -> Void) {
        
         if let token = UserDefaults.standard.string(forKey: "auth_token"){
         
@@ -16,11 +16,11 @@ class GetRooms {
             switch response.result {
                  case.success(let roomsArray):
                     
-                      let realm = try! Realm()
-                      try! realm.write {
+                    let realm = try! Realm()
+                    try! realm.write {
                        realm.add(roomsArray)
-                           }
-                
+                    }
+                    completionHandler()
                  case.failure:
                         break
                 

@@ -1,7 +1,5 @@
 
 import Foundation
-
-import Foundation
 import Alamofire
 
 enum RoomsRouter: URLRequestConvertible {

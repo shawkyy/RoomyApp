@@ -11,6 +11,7 @@ import UIKit
 import RealmSwift
 import Kingfisher
 
+
 class RoomsTableViewController: UITableViewController {
    
     @IBAction func signOutButton(_ sender: UIButton) {
@@ -21,20 +22,21 @@ class RoomsTableViewController: UITableViewController {
         
         UserDefaults.standard.removeObject(forKey: "auth_token")
 //
-//        let realm = try! Realm()
-//
-//        try! realm.write {
-//            realm.deleteAll()
-//        }
-//
-    }     
+        let realm = try! Realm()
+
+        try! realm.write {
+            realm.deleteAll()
+        }
+////
+    }
     @IBOutlet weak var headerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       getRoomsFromRealm()
-        
+        GetRooms.getRoomsFromBackEnd {
+            self.getRoomsFromRealm()
+        }
     }
     
    var rooms = [RoomsRealm]()
@@ -65,14 +67,14 @@ class RoomsTableViewController: UITableViewController {
         cell.roomPrice.text = rooms[indexPath.row].price
         cell.roomPlace.text = rooms[indexPath.row].place
         cell.roomTitle.text = rooms[indexPath.row].title
-//        cell.firstImage.kf.setImage(  with: URL(string: rooms[indexPath.row].image),
-//                                      placeholder: UIImage(named: "Logo"),
-//                                      options: [
-//                                        .scaleFactor(UIScreen.main.scale),
-//                                        .transition(.fade(1)),
-//                                        .cacheOriginalImage
-//           ])
- 
+        cell.firstImage.kf.setImage(  with: URL(string: rooms[indexPath.row].image),
+                                      placeholder: UIImage(named: "Logo"),
+                                      options: [
+                                        .scaleFactor(UIScreen.main.scale),
+                                        .transition(.fade(1)),
+                                        .cacheOriginalImage
+           ])
+
                 return cell
     }
   
@@ -91,6 +93,7 @@ class RoomsTableViewController: UITableViewController {
         }
         
         tableView.reloadData()
+        
     }
     
     

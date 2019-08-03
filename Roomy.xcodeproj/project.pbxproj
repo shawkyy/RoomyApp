@@ -132,8 +132,7 @@
 			children = (
 				4585150622E71ABE002C97E2 /* RoomyCell.swift */,
 			);
-			name = view;
-			path = "App delegate/view";
+			path = view;
 			sourceTree = "<group>";
 		};
 		4585150522E719E4002C97E2 /* services */ = {

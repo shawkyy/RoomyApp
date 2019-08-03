@@ -32,17 +32,13 @@ class SignInViewController: UIViewController, NVActivityIndicatorViewable{
                 
             case .success(let value):
                 
-                self.performSegue(withIdentifier: "goToRoomsVC", sender: Any?.self)
-                
                 let json = JSON(value as Any)
                 let auth_token = json["auth_token"].string
                 let userDefaults = UserDefaults.standard
                 userDefaults.set(auth_token, forKey: "auth_token")
-                
-             GetRooms.getRoomsFromBackEnd()
                
                 self.stopAnimating()
-                
+                self.performSegue(withIdentifier: "goToRoomsVC", sender: Any?.self)
                 
             case .failure:
                 Alerts.signInAlert(fromController: self)
