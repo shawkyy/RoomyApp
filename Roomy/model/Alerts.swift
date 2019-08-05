@@ -8,21 +8,11 @@
 
 import UIKit
 
-
 class Alerts:UIViewController {
     
-    
   class func signInAlert (fromController controller: UIViewController) {
-        
-        
         let alert = UIAlertController(title: "", message: "incorrect email or password", preferredStyle: UIAlertController.Style.alert)
-
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-    
-        controller.present(alert, animated: true, completion: nil)
-    
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            controller.present(alert, animated: true, completion: nil)
     }
-    
-    
-    
 }

@@ -11,19 +11,10 @@ import RealmSwift
 
 class RoomyCell: UITableViewCell {
 
-
-    
     @IBOutlet weak var roomTitle: UILabel!
-    
     @IBOutlet weak var roomPrice: UILabel!
-    
     @IBOutlet weak var roomPlace: UILabel!
-    
     @IBOutlet weak var firstImage: UIImageView!
-    
     @IBOutlet weak var secondImage: UIImageView!
-    
     @IBOutlet weak var thirdImage: UIImageView!
-    
- 
 }

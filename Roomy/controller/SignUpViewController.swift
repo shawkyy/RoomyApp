@@ -16,13 +16,10 @@ class SignUpViewController: UIViewController,NVActivityIndicatorViewable {
     @IBOutlet private weak var emailTextField: UITextField!
     
     @IBAction private func signUpButton(_ sender: UIButton) {
-        
         guard let name = emailTextField.text, !name.isEmpty else {return}
         guard let passwrod = passwordTextField.text, !passwrod.isEmpty else {return}
         guard let email = passwordTextField.text, !email.isEmpty else {return}
-        
         startAnimating()
-        
         AF.request(RoomsRouter.signUp(["name": nameTextField.text!, "email": emailTextField.text!, "Password": passwordTextField.text!]))
             .validate()
             .response { (response) in
@@ -30,7 +27,6 @@ class SignUpViewController: UIViewController,NVActivityIndicatorViewable {
               case .success:
                    self.performSegue(withIdentifier: "SignUpToRooms", sender: Any?.self)
                    self.stopAnimating()
-                    
               case .failure:
                     break
            }

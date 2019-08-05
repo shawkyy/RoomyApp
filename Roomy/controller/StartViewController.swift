@@ -19,7 +19,6 @@ class StartViewController: UIViewController {
         }
     
         else {
-            
             DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
             self.performSegue(withIdentifier: "startToSignIn", sender: self)
             })

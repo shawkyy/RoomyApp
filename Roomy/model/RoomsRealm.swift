@@ -31,12 +31,6 @@ class RoomsRealm: Object, Mappable{
         roomDescription    <- map["roomDescription"]
         
     }
-    
-    
-    
-
-
-
 
 }
 

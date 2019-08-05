@@ -11,7 +11,6 @@ import UIKit
 import RealmSwift
 import Kingfisher
 
-
 class RoomsTableViewController: UITableViewController {
     @IBOutlet weak var headerView: UIView!
 
