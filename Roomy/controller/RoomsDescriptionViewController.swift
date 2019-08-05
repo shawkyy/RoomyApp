@@ -12,8 +12,5 @@ class RoomsDescriptionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
-  
-
 }

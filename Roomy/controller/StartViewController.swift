@@ -9,31 +9,21 @@
 import UIKit
 
 class StartViewController: UIViewController {
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
         if (UserDefaults.standard.object(forKey: "auth_token") != nil) {
-            
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
             self.performSegue(withIdentifier: "startToRooms", sender: self)
         })
-   
         }
     
         else {
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-                self.performSegue(withIdentifier: "startToSignIn", sender: self)
+            self.performSegue(withIdentifier: "startToSignIn", sender: self)
             })
-            
-        }
-        
-    
+      }
     }
-
-
   }
 
